@@ -3,12 +3,10 @@ body
   }
 hr
   {
-    height: 0;
-    border-style: dotted;
-    border-top-style: None;
-    width:5%;
-    border-width: 5px;
-    border-color: #8A8635;
+    height: 2px;
+    background-color: #000000;
+    border-top: 0;
+    border-bottom: 0;
   }
 h1
   {
@@ -18,17 +16,23 @@ h3
   {
   color: #146356
   }
-
-  html, body {
-      height: 100%;
+h4
+  {
+  color: #146356
   }
 
-  html {
-      display: table;
-      margin: auto;
+table
+  {
+  border-spacing : 30px;
   }
 
-  body {
-      display: table-cell;
-      vertical-align: middle;
+.Title
+  {
+    text-align: center;
+  }
+
+.Photos_Of_Me
+  {
+    width:   300px;
+    height:  300px;
   }
