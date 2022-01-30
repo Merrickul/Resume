@@ -1,85 +1,126 @@
-<!DOCTYPE html>
-<!--Page Template-->
-<html lang="en" dir="ltr">
-
+<html>
 <head>
+  <br>
+  <h1 class = "Header">Andrew Grandison Map Repository</h1>
+  <hr>
   <meta charset="utf-8">
-  <title>"Andrew Grandison Personal Site"</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS API for JavaScript Tutorials: Add a feature layer</title>
+
+  <style>
+  table{
+    margin: auto;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    border: white;
+    padding: 20px
+  }
+     #viewDiv {
+      margin: auto;
+      height: 750px;
+      width: 1200px;
+      top:0;
+      bottom:0;
+      left: 0;
+      right: 0;
+      padding: 20px
+    }
+    .Header,p{
+      color: white;
+      text-align: center;
+      margin: auto;
+      height: 90px;
+      width: 1200px;
+      top:0;
+      bottom:0;
+      left: 0;
+      right: 0;
+    }
+    body{
+      background-color: black;
+    }
+    </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.22/"></script>
+
+<script>
+
+    require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+    "esri/layers/FeatureLayer",
+    "esri/widgets/Legend"
+
+  ], function(esriConfig,Map,MapView,FeatureLayer,Legend) {
+
+  esriConfig.apiKey = "AAPKbe972146ddb049fa9116c2e4e7174d4fxmrofXW27EhV77tc4HPWYt26W-oQNXaT4ORDlK6ZMni2fuFbHlsbYG2qKvKKW2f9";
+
+  const map = new Map({
+    basemap: "satellite"
+    //https://developers.arcgis.com/javascript/3/jsapi/esri.basemaps-amd.html
+    //ESRI Basemaps
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    //center: [-79.78218118406,43.715355993267536],
+    zoom: 13
+  });
+
+  const trailheadsRenderer = {
+  "type": "simple",
+  "symbol": {
+    "type": "picture-marker",
+    "url": "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
+    "width": "25px",
+    "height": "25px"
+    }
+  }
+
+//Hobbies (points)
+  const HobbiesLayer = new FeatureLayer({
+    url: "https://services.arcgis.com/w9dBo4CVIrugrGos/arcgis/rest/services/01_hobbies/FeatureServer/0"
+  });
+  map.add(HobbiesLayer);
+
+  const legend = new Legend({
+    view: view,
+    layerInfos:
+    [
+      {
+        layer: HobbiesLayer,
+        title: "My Hobbies"
+      }
+    ]
+  });
+
+  view.ui.add(legend, "bottom-left");
+
+//Return the Extent of the points
+  HobbiesLayer.when(() => {
+      return HobbiesLayer.queryExtent();
+    })
+    .then((response) => {
+      view.goTo(response.extent);
+    });
+
+  });
+
+</script>
+
 </head>
 
-<!--Title of Website-->
-<!--CSS is is below-->
 <body>
-  <table cellspacing = 20>
+  <table>
     <tr>
-      <td><img class = "Photos_Of_Me" src="https://media-exp1.licdn.com/dms/image/C4D03AQE3hjTaY_71gg/profile-displayphoto-shrink_400_400/0/1642202934969?e=1648080000&v=beta&t=-Gm71R0IPzt0p6eCgCy-Nn2vtZtT0sSlVmIUXCbN9gM"alt="Andrew Photo"></td>
-      <td>
-        <h1 class = "Title">Andrew Grandison</h1>
-        <p  class = "Title">Analyst and Programmer</p>
-        <p  class = "Title">This webpage is to show my work experience, and background in Python, and Web Development. I hope that this website acts as a gateway to my mind and all things analytical and programming.</p>
-      </td>
-      <td><img class = "Photos_Of_Me" src="https://scontent.fyzd1-3.fna.fbcdn.net/v/t39.30808-6/215986899_4024243367694953_6861016204011246225_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=VFAakQ38OzMAX-X1UTF&tn=F2wVAD-9_kVNyOGl&_nc_ht=scontent.fyzd1-3.fna&oh=00_AT-iuPfBRJvWYL3rALFPyiMTpjp0IjfMwU-jNNQ5Mo4oQg&oe=61EDA3A2" alt="Andrew G Hiking"></td>
+      <td><p>dzd</p></td>
+      <td id="viewDiv"></td>
     </tr>
   </table>
-  <hr>
-  <h3>Education and Background</h3>
-  <table class = "Resume" border = 0 cellspacing = "10">
-    <thead>
-      <th>Dates</th>
-      <th>Company/Organization</th>
-      <th>What did I do</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2019-2021</td>
-        <td>Toronto Police Service</td>
-        <td>Crime Analysis, GIS</td>
-      </tr>
-      <tr>
-        <td>2018</td>
-        <td>UEM Consulting LTD</td>
-        <td>Asset Management and Consulting</td>
-      </tr>
-      <tr>
-        <td>2017</td>
-        <td>Ministry of Environment & Climate Change</td>
-        <td>Spatial Modelling</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <hr>
-<h3>Skills</h3>
-<table cellspacing = "10">
-  <tr>
-    <td>Arcgis</td>
-    <td>✔✔✔✔✔</td>
-    <td>Analysis</td>
-    <td>✔✔</td>
-  </tr>
-  <tr>
-    <td>Python</td>
-    <td>✔✔</td>
-    <td>PowerBI</td>
-    <td>✔✔</td>
-    <td>Excel</td>
-    <td>✔✔✔✔</td>
-    <td>Presentation Skills</td>
-    <td>✔✔✔✔✔</td>
-  </tr>
-</table>
-<hr>
-<h3>Site Web Pages</h3>
-<table cellspacing = "10">
-  <tr>
-    <td><a href="index.html">Home Page</a></td>
-  </tr>
-<tr>
-  <td><a href="02 Hobbies.html">Hobbies</a></td>
-</tr>
-<tr>
-  <td><a href="03 Contact.html">Contact Details</a></td>
-</tr>
-</table>
+</body>
 </html>
