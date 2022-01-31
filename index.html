@@ -8,31 +8,24 @@
   <title>ArcGIS API for JavaScript Tutorials: Add a feature layer</title>
 
   <style>
-  table{
-    margin: auto;
-    top:0;
-    bottom:0;
-    left: 0;
-    right: 0;
-    border: white;
-    padding: 20px
-  }
-     #viewDiv {
+     #viewDiv{
       margin: auto;
-      height: 70%;
+      height: 50%;
       width: 50%;
-      top:0;
+      top:10%;
       bottom:0;
       left: 0;
       right: 0;
-      padding: 20px
+      padding: .5%;
+
+      background-color: white;
     }
-    .Header,p{
+    .Header,.MapElements{
       color: white;
       text-align: center;
       margin: auto;
-      height: 90px;
-      width: 1200px;
+      height: 5%;
+      width: 50%;
       top:0;
       bottom:0;
       left: 0;
@@ -53,14 +46,29 @@
     "esri/Map",
     "esri/views/MapView",
     "esri/layers/FeatureLayer",
-    "esri/widgets/Legend"
+    "esri/widgets/Legend",
+    "esri/layers/VectorTileLayer",
+    "esri/Basemap",
 
-  ], function(esriConfig,Map,MapView,FeatureLayer,Legend) {
+  ], function(esriConfig,Map,MapView,FeatureLayer,Legend,VectorTileLayer,Basemap) {
 
   esriConfig.apiKey = "AAPKbe972146ddb049fa9116c2e4e7174d4fxmrofXW27EhV77tc4HPWYt26W-oQNXaT4ORDlK6ZMni2fuFbHlsbYG2qKvKKW2f9";
 
+  const BaseMapLayer = new VectorTileLayer({
+    portalItem: {
+      id: "f288fd4aafa14e9da382b13774360c0f"
+    }
+  }
+  );
+
+  const basemap = new Basemap({
+    baseLayers:[
+      BaseMapLayer
+    ]
+  })
+
   const map = new Map({
-    basemap: "satellite"
+    basemap: basemap
     //https://developers.arcgis.com/javascript/3/jsapi/esri.basemaps-amd.html
     //ESRI Basemaps
   });
@@ -99,7 +107,7 @@
     ]
   });
 
-  view.ui.add(legend, "bottom-left");
+  view.ui.add(legend, "bottom-right");
 
 //Return the Extent of the points
   HobbiesLayer.when(() => {
@@ -116,8 +124,9 @@
 </head>
 
 <body>
-<div id="viewDiv">
-
+<div id = "viewDiv">
 </div>
+<br>
+<p class = "MapElements">The Map above shows my favorite places to Mountain Bike in Southern Ontario.</p>
 </body>
 </html>
