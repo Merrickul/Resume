@@ -1,116 +1,17 @@
 <html>
 <head>
   <br>
-  <p class = "Header">Maps</p>
+  <h1 class = "Header">Mountain Biking Locations in Southern Ontario</h1>
+  <hr class = "TopLine">
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ArcGIS API for JavaScript Tutorials: Add a feature layer</title>
 
-  <style>
-     #viewDiv{
-      margin: auto;
-      height: 50%;
-      width: 75%;
-      top:10%;
-      bottom:0;
-      left: 0;
-      right: 0;
-      padding: .5%;
-
-      background-color: white;
-    }
-    .Header{
-      color: white;
-      text-align: center;
-    }
-    body{
-      background-color: black;
-    }
-    </style>
-
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.22/"></script>
 
-<script>
-
-    require([
-    "esri/config",
-    "esri/Map",
-    "esri/views/MapView",
-    "esri/layers/FeatureLayer",
-    "esri/widgets/Legend",
-    "esri/layers/VectorTileLayer",
-    "esri/Basemap",
-
-  ], function(esriConfig,Map,MapView,FeatureLayer,Legend,VectorTileLayer,Basemap) {
-
-  esriConfig.apiKey = "AAPKbe972146ddb049fa9116c2e4e7174d4fxmrofXW27EhV77tc4HPWYt26W-oQNXaT4ORDlK6ZMni2fuFbHlsbYG2qKvKKW2f9";
-
-  const BaseMapLayer = new VectorTileLayer({
-    portalItem: {
-      id: "f288fd4aafa14e9da382b13774360c0f"
-    }
-  }
-  );
-
-  const basemap = new Basemap({
-    baseLayers:[
-      BaseMapLayer
-    ]
-  })
-
-  const map = new Map({
-    basemap: basemap
-    //https://developers.arcgis.com/javascript/3/jsapi/esri.basemaps-amd.html
-    //ESRI Basemaps
-  });
-
-  const view = new MapView({
-    container: "viewDiv",
-    map: map,
-    //center: [-79.78218118406,43.715355993267536],
-    zoom: 13
-  });
-
-  const trailheadsRenderer = {
-  "type": "simple",
-  "symbol": {
-    "type": "picture-marker",
-    "url": "https://static.arcgis.com/images/Symbols/Shapes/BlackStarLargeB.png",
-    "width": "25px",
-    "height": "25px"
-    }
-  }
-
-//Hobbies (points)
-  const HobbiesLayer = new FeatureLayer({
-    url: "https://services.arcgis.com/w9dBo4CVIrugrGos/arcgis/rest/services/01_hobbies/FeatureServer/0"
-  });
-  map.add(HobbiesLayer);
-
-  const legend = new Legend({
-    view: view,
-    layerInfos:
-    [
-      {
-        layer: HobbiesLayer,
-        title: "My Hobbies"
-      }
-    ]
-  });
-
-  view.ui.add(legend, "bottom-right");
-
-//Return the Extent of the points
-  HobbiesLayer.when(() => {
-      return HobbiesLayer.queryExtent();
-    })
-    .then((response) => {
-      view.goTo(response.extent);
-    });
-
-  });
-
+<script src = "javascript.js">
 </script>
 
 </head>
@@ -118,7 +19,9 @@
 <body>
 <div id = "viewDiv">
 </div>
-<br>
 <p class = "MapElements">The Map above shows my favorite places to Mountain Bike in Southern Ontario.</p>
+<div id = "tableDiv">
+
+</div>
 </body>
 </html>
