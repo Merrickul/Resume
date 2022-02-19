@@ -1,48 +1,80 @@
-#viewDiv{
- margin: auto;
- height: 50%;
- width: 80%;
- top:10%;
- bottom:0;
- left: 0;
- right: 0;
- padding: .5%;
- background-color: white;
+#viewDiv {
+  margin: auto;
+  height: 50%;
+  width: 75%;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding:1%;
 }
 
-#tableDiv{
- margin: auto;
- height: 50%;
- width: 80%;
- top:10%;
- bottom:0;
- left: 0;
- right: 0;
- padding: .5%;
- background-color: white;
+#tableDiv {
+  margin: auto;
+  height: 25%;
+  width: 50%;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
 }
 
-.Header{
- color: white;
- text-align: center;
-}
-
-body{
- background-color: black;
-}
-
-.MapElements{
+body {
+  background-color: #E9E5D6;
+  font-family: 'Roboto', sans-serif;
+  color: #464E2E;
   text-align: center;
-  color:white;
+  line-height: 1.5;
+  margin:auto;
 }
 
-.TopLine{
-  Width:50%;
-  margin:1% auto;
+.MapElements {
+  text-align: center;
+  color: white;
 }
 
-.Outer_Box{
-  bottom:45%;
+.TopLine {
+  Width: 50%;
+  margin: 1% auto;
+}
+
+.Outer_Box {
+  bottom: 45%;
   display: inline;
   color: white;
+}
+
+.About_Me{
+  border-radius: 50%;
+  margin:auto;
+  height:400px;
+  width:400px;
+  background-color: black;
+}
+
+.About_Me_Text,p{
+  width: 75%;
+  margin:auto;
+}
+
+.resume_images{
+  margin:auto;
+  margin-left: 50px;
+  margin-right:50px;
+  height:200px;
+  width:200px;
+}
+
+.resume_blocks{
+  display:inline-block;
+}
+
+.resume_Text{
+  margin:auto;
+}
+
+h3{
+  text-decoration: underline;
 }
