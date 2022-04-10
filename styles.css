@@ -92,8 +92,8 @@ a:hover,a:active{
 }
 
 .skills-images {
-  height: 50%;
-  width: 50%;
+  height: 25%;
+  width: 25%;
   margin-bottom: 20px;
   background-color: #ACB992;
   border: dashed;
@@ -191,6 +191,8 @@ ul {
   color: white;
   margin-left: 25px;
   margin-right: 25px;
+  background-color:white;
+  padding:10px;
 }
 
 .contact-title {
