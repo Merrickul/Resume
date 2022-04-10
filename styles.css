@@ -47,7 +47,6 @@ body, h5 {
 
 .About_Me {
   border-radius: 50%;
-  margin: auto;
   height: 400px;
   width: 400px;
   background-color: black;
@@ -93,8 +92,8 @@ a:hover,a:active{
 }
 
 .skills-images {
-  height: 150px;
-  width: 150px;
+  height: 50%;
+  width: 50%;
   margin-bottom: 20px;
   background-color: #ACB992;
   border: dashed;
@@ -107,7 +106,6 @@ a:hover,a:active{
 }
 
 .skills-Container {
-  margin-bottom: 50px;
   max-width: 100%;
 }
 
@@ -115,27 +113,48 @@ a:hover,a:active{
   width: 75%;
   margin: auto;
   margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 /*Resume Text */
+
+.resume-titles{
+  text-align:center;
+}
+
 .resume-block {
   padding-left: 50px;
   padding-right: 50px;
   margin: auto;
 }
 
-.resume-text {}
+.resume-text{
+  text-align:center;
+  width:75%;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+
+.resume-text-list{
+  text-align:center;
+  width:75%;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+}
 
 .resume-icons {
   height: 15px;
   width: 15px;
   margin-left: 3px;
   margin-right: 3px;
+  margin:auto;
 }
 
 .resume-date-range {
   color: #464E2E;
-  text-align: left;
 }
 
 .resume-item {
@@ -143,18 +162,22 @@ a:hover,a:active{
 }
 
 .resume-images{
-  text-align: center;
   margin-top: 10px;
   margin-bottom: 25px;
   width: 75px;
   height: 75px;
+  text-align:center;
 }
 
-@media (max-width: 767px) {
+.resume-image-block{
+  text-align:center;
+}
+
+/* @media (max-width: 767px) {
   .resume-item {
     text-align: center;
   }
-}
+} */
 
 ul {
   display: table;
@@ -183,7 +206,7 @@ ul {
 
 .box {
   background-color: #464E2E;
-  margin-top: 50px;
-  height: 200px;
+  margin-top: 25px;
+  height: 150px;
   width: 100%;
 }
