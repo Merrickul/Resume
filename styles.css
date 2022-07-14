@@ -47,8 +47,8 @@ body, h5 {
 
 .About_Me {
   border-radius: 50%;
-  height: 400px;
-  width: 400px;
+  height: auto;
+  width: 50%;
   background-color: black;
 }
 
