@@ -1,193 +1,214 @@
-<html>
+#viewDiv {
+  margin: auto;
+  height: 50%;
+  width: 75%;
+  top: 10%;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  padding: 1%;
+  border-color: #464E2E;
+  border-style: solid;
+}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>AG Personal Website</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+#tableDiv {
+  margin: auto;
+  height: 25%;
+  width: 50%;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
 
-  <!-- Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+body, h5 {
+  text-align: center;
+  line-height: 1.5;
+  margin: auto;
+}
 
-  <!-- ESRI -->
+.MapElements {
+  text-align: center;
+  color: white;
+}
 
-  <script src="https://js.arcgis.com/4.22/">
-  </script>
-  <script src="javascript.js">
-  </script>
+.TopLine {
+  Width: 50%;
+  margin: 1% auto;
+}
 
-</head>
+.Outer_Box {
+  bottom: 45%;
+  display: inline;
+  color: white;
+}
 
-<body>
+.About_Me {
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  background-color: black;
+}
 
-  <div class="container nav-bar-box">
-    <div class="row nav-bar-row">
-      <div class="col">
-        <h3><a class = "nav-anchor" href="#About-Me">About Me</a></h3>
-      </div>
-      <div class="col">
-        <h3><a class = "nav-anchor" href="#Skills">Skills</a></h3>
-      </div>
-      <div class="col">
-        <h3><a class = "nav-anchor" href="#GIS">GIS</a></h3>
-      </div>
-      <div class="col">
-        <h3><a class = "nav-anchor" href="#Resume">My Work History</a></h3>
-      </div>
-    </div>
+.About_Me_Text {
+  width: 75%;
+  margin: auto;
+}
 
+/* Nav Bar */
+.nav-bar-row {
+  margin-top: 50px;
+  background-color: white;
+  color:white;
+}
 
-  <!-- About Me -->
-  <section id ="About-Me">
-    <br>
-    <h1 class="Header">Andrew Grandison</h1>
-    <hr class="TopLine">
-    <img class="About_Me" src="01 Andrew.jpg">
-    <br>
-    <br>
-    <h2 class="Titles">Geographer, Programmer and Analyst</h2>
-    <br>
-    <div class="About_Me_Text">
-      Hi, my name is Andrew Grandison. This website is to host information about my work experiences, hobbies and interests and as well share any interesting news and articles as it relates to data analysis, GIS, and programming.
-      <hr>
-  </section>
+a{
+  text-decoration: none;
+}
 
+a:link,a:visited{
+  color:black;
+  text-decoration: none;
+}
 
-  <section id="GIS">
-    <br>
-    <h2>Geographic Information Systems</h2>
-    </div>
-    <p class = resume-text>I studied Geographic Analysis at Ryerson University in 2017. I enjoy making maps, conducting spatial analysis and most recently creating web GIS Applications. The map below is the locations of my favorite places to Mountain Bike, and Hike in Southern
-      Ontario.</p>
-    <br>
+a:hover,a:active{
+  color:black;
+  text-decoration: none;
+}
 
-    <!-- Map -->
+/* Skills */
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
-    <div id="viewDiv">
-    </div>
-  </section>
+.section-hr {
+  width: 75%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 25px;
+}
 
-  <!-- My Skills -->
-  <section id="Skills">
-    <h1 class="section-title">My Skills</h1>
-    <hr class="section-hr">
-    <div class="container-fluid skills-Container">
-      <div class="row">
-        <div class="skill-item col col-sm-12 col-md-6 col-lg-3">
-          <img class="skills-images" src="https://cdn-icons-png.flaticon.com/512/1006/1006585.png" alt="Analytics & Research">
-          <h5 class="skills-titles">Analytics</h5>
-          <p><strong>Data Modelling</strong></p>
-          <p class=skills-text>I ask meaningful questions about data that create discoveries for the end user.</p>
+.skills-images {
+  height: auto;
+  width: 25%;
+  margin-bottom: 20px;
+  background-color: #ACB992;
+  border: dashed;
+  border-color: black;
+  border-width: medium;
+}
 
-        </div>
-        <div class="skill-item col col-sm-12 col-md-6 col-lg-3">
-          <img class="skills-images" src="https://cdn-icons-png.flaticon.com/512/3159/3159310.png" alt="Data Visualization">
-          <h5 class="skills-titles">Data Visualization</h5>
-          <p><strong>Charts, Graphs, Maps, Tables</strong></p>
-          <p class=skills-text>I have extensive experience creating beautiful maps, tables, and charts.</p>
+.skills-titles {
+  margin-bottom: 30px;
+}
 
-        </div>
-        <div class="skill-item col col-sm-12 col-md-6 col-lg-3">
-          <img class="skills-images" src="https://cdn-icons-png.flaticon.com/512/1336/1336494.png" alt="Programming">
-          <h5 class="skills-titles">Programming</h5>
-          <p><strong>Python,SQL</strong></p>
-          <p class=skills-text>I automate my workflows using python and visualize the outputs on the web using html, css and javascript.</p>
+.skills-Container {
+  max-width: 100%;
+}
 
-        </div>
-        <div class="skill-item col col-sm-12 col-md-6 col-lg-3">
-          <img class="skills-images" src="https://cdn-icons-png.flaticon.com/512/3305/3305840.png" alt="UX">
-          <h5 class="skills-titles">User Experience</h5>
-          <p><strong>Dashboards, Print & Web Design </strong></p>
-          <p class=skills-text>I design with intention to make sure users get the info they want in a way that makes sense for them.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+.skills-text {
+  width: 75%;
+  margin: auto;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
 
-<div class="box">
-</div>
+/*Resume Text */
 
-  <section id="Resume">
-    <div>
-      <h1 class="section-title">My Work History</h1>
-      <hr class="section-hr">
-      <div class="container-fluid skills-Container">
-        <div class="row resume-block">
-          <div class="resume-item col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h4 class = "resume-titles">Toronto Police Service</h4>
-            <div class="resume-image-block">
-              <img class = "resume-images"src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Seal_of_the_Toronto_Police_Service.svg/1200px-Seal_of_the_Toronto_Police_Service.svg.png" alt = "TPS Logo"></img>
-            </div>
-            <h5 class = "resume-date-range">District Crime Analyst</h5>
-            <h5 class = "resume-date-range">Sept 2020 - Current</h5>
-            <p class = "resume-text">In this role I analyze crime, and traffic data for the purpose of dessiminating information to unit commanders.</p>
-            <ul class = "resume-text-list">
-                <li>Dessiminating Crime Related data to unit commanders to inform trends</li>
-                <ul class = "resume-text-list">
-                    <li><a href="#"><img class=resume-icons src="https://cdn-icons-png.flaticon.com/512/1822/1822920.png" alt="Email"></a>
-                    Python for data analysis and ESRI Arcgis Pro for Cartography.</li>
-                    <li>Windows Task Scheduler to initiate the script.</li>
-                    <li>
-                    <a href="#"><img class=resume-icons src="https://cdn-icons-png.flaticon.com/512/1822/1822920.png" alt="Email"></a>
-                    Python, HTML, CSS for email compilation and dissimination.</li>
-                </ul>
-                <li>Creating Bulletins and Crime Alerts</li>
-                <ul class = "resume-text-list">
-                    <li>Liasing with Detectives to capture video.</li>
-                    <li>Compiling bulletins.</li>
-                    <li>Desiminating to internal and external agencies.</li>
-                </ul>
-            </ul>
-          </div>
-          <div class="resume-item col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h4 class = "resume-titles">Urban Environmental Management </h4>
-            <div class="resume-image-block">
-            <img class = "resume-images"src = "https://www.uemconsulting.com/wp-content/uploads/2019/08/logo.svg" alt = "TPS Logo"></img>
-            </div>
-            <h5 class = "resume-date-range">GIS Analyst</h5>
-            <h5 class = "resume-date-range">May 2018 - May 2019</h5>
-            <p class = "resume-text">In this role I helped make Municipal Asset Management Plans. These plans helped municipalities plan for capital expenditure and define levels of service.</p>
-            <ul class = "resume-text-list">
-                <li>Created Deprecation Models project capital expenditure for municipal assets</li>
-                <ul class = "resume-text-list">
-                    <li>Created a Excel Workbook model that modelled replacement dates for assets</li>
-                    <li>Arcmap for Cartography and Spatial Analysis</li>
-                    <li>Microsoft Word for Report Writing</li>
-                </ul>
-            </ul>
-          </div>
-          <div class="resume-item col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h4 class = "resume-titles">Ministry of Environment</h4>
-            <div class="resume-image-block">
-            <img class = "resume-images"src = "https://obiaa.com/wp-content/uploads/2020/03/OCO.png" alt = "Ontario Logo"></img>
-            </div>
-            <h5 class = "resume-date-range">GIS Technician Co-Op</h5>
-            <h5 class = "resume-date-range">Sept 2018 - Dec 2019</h5>
-            <p class = "resume-text">In this role I created ESRI model builder model to validate and geocode a list of addresses with very poor address fields/data.</p>
-            <ul class = "resume-text-list">
-                <li> Performed spatial analysis, data cleaning and quality assurance on the list of generators/receivers registered in HWIN system for geocoding and validation.</li>
-                <ul class = "resume-text-list">
-                    <li>ArcGIS for Desktop: Model Builder, Spatial Analyst, and multiple other geoprocessing tools. Microsoft Excel was used for data preparation/cleaning Microsoft Access for data deletion, querying and updating. </li>
-                    <li>Creation of a geographic model which executed overlay analysis in model builder in ArcGIS to validate the location 18,000 hazardous waste sites in Canada & The United States through a spatial hierarchal method. </li>
+.resume-titles{
+  text-align:center;
+}
 
-                </ul>
-             </ul>
-          </div>
-        </div>
+.resume-block {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+}
 
-      </div>
-    </div>
-  </section>
+.resume-text{
+  text-align:center;
+  width:75%;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  font-weight:bold;
+}
 
-  <div class="box">
-    <section id="cta">
-      <h3 class="contact-title">Contact Me Below</h3>
-      <a href="#"><img class=socials src="https://cdn-icons-png.flaticon.com/512/546/546394.png" alt="Email"></a>
-      <a href="#"><img class=socials src="https://cdn-icons.flaticon.com/png/512/3488/premium/3488326.png?token=exp=1649599153~hmac=411c47f922bd7a664c9228cd0672d73e" alt="Email"></a>
-    </section>
-  </div>
-</body>
+.resume-text-list{
+  text-align:center;
+  width:75%;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+}
 
-</html>
+.resume-icons {
+  height: 15px;
+  width: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin:auto;
+}
+
+.resume-date-range {
+  color: #464E2E;
+}
+
+.resume-item {
+  text-align: left;
+}
+
+.resume-images{
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 75px;
+  height: 75px;
+  text-align:center;
+}
+
+.resume-image-block{
+  text-align:center;
+}
+
+/* @media (max-width: 767px) {
+  .resume-item {
+    text-align: center;
+  }
+} */
+
+ul {
+  display: table;
+  margin: 0 auto;
+}
+
+/* Contact and Footer */
+.socials {
+  height: 40px;
+  width: 40px;
+  color: white;
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color:white;
+  padding:10px;
+}
+
+.contact-title {
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.contact-me-buttons {
+  height: 10px;
+  width: 10px;
+}
+
+.box {
+  background-color: #464E2E;
+  margin-top: 25px;
+  height: 150px;
+  width: 100%;
+}
